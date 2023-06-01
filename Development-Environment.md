@@ -1,4 +1,4 @@
-# Cloud-Native-App-Simulator Community
+# HydraGen's Community
 
 Welcome to the Cloud-Native-App-Simulator community!
 
