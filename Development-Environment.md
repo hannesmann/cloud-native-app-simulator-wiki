@@ -10,15 +10,15 @@ improving docs, etc.
 
 ## Introduction
 
-Cloud-Native-App-Simulator is an open source microservice benchmark suite 
-for generating complete implementations of more generic architectural patterns
+HydraGen is an open source microservice benchmark generator 
+that allows generating complete implementations of more generic architectural patterns
 for microservices.
 
 ## Development Enviornment
 This document helps you get started developing code for Cloud-Native-App-Simulator.
 If you follow this guide and find a problem, please take a few minutes to update this page.
 
-The Cloud-Native-App-Simulator build system is designed to run with minimal dependencies:
+HydraGen's build system is designed to run with minimal dependencies:
 - kind
 - docker
 - git
