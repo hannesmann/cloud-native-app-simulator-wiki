@@ -68,3 +68,5 @@ The input to the generation module must be given in JSON format keeping the taxo
 ```
 
 # Examples
+
+Examples for simple and complex applications generated with HydraGen can be found [here](generator/examples).
