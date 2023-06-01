@@ -45,7 +45,7 @@ The input to the generation module must be given in JSON format keeping the taxo
   {
     "name": "<string>",
     "protocol": "<string:http|grpc>",
-    % "execution_mode": "<string:sequential|parallel>",
+    "execution_mode": "<string:sequential|parallel>",
     "cpu_complexity": {
       "execution_time": <float:seconds>
     },
