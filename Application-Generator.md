@@ -10,28 +10,11 @@ HydraGen uses a standard taxonomy with hierarchical structure, which is the inpu
   "services": [
     {
       "name": "<string>",
-      "clusters": [
-        {
-          "cluster": "<string>",
-          "replicas": <integer>,
-          "namespace": "<string>",
-          "node": "<string>",
-          "annotations": [...]
-        }
-      ],
-      "resources": {
-        "limits": {
-          "memory": "<string:bytes>",
-          "cpu": "<string:cores>"
-        },
-        "requests": {
-          "memory": "<string:bytes>",
-          "cpu": "<string:cores>"
-        }
-      },
+      "clusters": [...],
+      "resources": {...},
       "processes": <integer>,
       "threads": <integer>,
-       "readiness_probe": <integer>,
+      "readiness_probe": <integer>,
       "endpoints": [...]
     }
   ],
@@ -54,8 +37,24 @@ The user can define the placement of each microservice on a specific node, clust
     ...
 ]
 ```
+## Describing Resource Allocation
+HydraGen also supports the configuration of the requested resources to be allocated to a microservice instance and the maximum resource usage in terms of both CPU and memory.
 
-## Endpoint Description
+```json
+"resources": {
+  "limits": {
+    "memory": "<string:bytes>",
+    "cpu": "<string:cores>"
+  },
+  "requests": {
+    "memory": "<string:bytes>",
+    "cpu": "<string:cores>"
+  }
+}
+```
+
+## Describing Topological Architecture
+For each microservice, HydraGen supports a set of configuration parameters that define the topological architecture of an application by describing the dependencies between services. To define the microservice fan-in, different parameters can be used which specify the set of endpoints a component serves. For each endpoint, the user can specify parameters such as protocol and a relative fan-out based on a set of calls to subsequent microservice endpoints as well as the execution mode across these calls. Furthermore, for each subsequent microservice endpoint, the user can specify parameters such as the port and protocol. These options enable the user to generate complex multi-tier application architectures with different fan-in and/or fan-out characteristics.
 
 ```json
 "endpoints": [
@@ -63,27 +62,41 @@ The user can define the placement of each microservice on a specific node, clust
     "name": "<string>",
     "protocol": "<string:http|grpc>",
     "execution_mode": "<string:sequential|parallel>",
-    "cpu_complexity": {
-      "execution_time": <float:seconds>
-    },
-    "network_complexity": {
-      "forward_requests": "string:synchronous|asynchronous",
-      "response_payload_size": <integer:chars>,
-      "called_services": [
-        {
-          "service": "<string>",
-          "port": "<string>",
-          "endpoint": "<string>",
-          "protocol": "<string:http|grpc>",
-          "traffic_forward_ratio": <integer>,
-          "request_payload_size": <integer:chars>
-        }
-      ]
-    }
-  }
+    "cpu_complexity": {...},
+    "network_complexity": {...}
+  },
+  ...
 ]
 ```
 
+## Describing Resource Stressors
+HydraGen supports parameters to express the computational complexity or stress a microservice exerts on the different hardware resources. Initially, CPU-bounded or network-bounded tasks are implemented. The complexity of a CPU-bounded task can be described based on the time a busy-wait is executed, while the load on the network I/O can be described by specifying parameters such as the call forwarding mode and the request/response size for each service endpoint call.
+
+### CPU Complexity
+```json
+"cpu_complexity": {
+  "execution_time": <float:seconds>
+}
+```
+
+### Network Complexity
+```json
+"network_complexity": {
+  "forward_requests": "string:synchronous|asynchronous",
+  "response_payload_size": <integer:chars>,
+  "called_services": [
+    {
+      "service": "<string>",
+      "port": "<string>",
+      "endpoint": "<string>",
+      "protocol": "<string:http|grpc>",
+      "traffic_forward_ratio": <integer>,
+      "request_payload_size": <integer:chars>
+    }
+  ]
+}
+```
+ 
 # Examples
 
 Examples for simple and complex applications generated with HydraGen can be found [here](generator/examples).
