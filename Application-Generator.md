@@ -99,4 +99,4 @@ HydraGen supports parameters to express the computational complexity or stress a
  
 # Examples
 
-Examples for simple and complex applications generated with HydraGen can be found [here](generator/examples).
+Examples for simple and complex applications generated with HydraGen can be found [here](./generator/examples).
