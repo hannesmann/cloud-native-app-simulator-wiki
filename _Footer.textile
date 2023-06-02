@@ -1,2 +1,2 @@
 Ericsson Research & Umea University
-Apache License, Version 2.0
+Apache-2.0 License
