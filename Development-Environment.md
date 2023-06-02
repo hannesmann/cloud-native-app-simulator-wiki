@@ -1,4 +1,3 @@
-# Development Enviornment
 This document helps you get started developing code for HydraGen.
 If you follow this guide and find a problem, please take a few minutes to update this page.
 
@@ -12,18 +11,17 @@ These dependencies need to be set up before building and running the code.
 - [Build the worker image](#build-the-worker-image)
 - [Setting Up Kind](#setting-up-kind)
 
-
-### Setting Up Docker
+# Setting Up Docker
 To use docker to build required images you will need:
 - **docker tools:** To download and install Docker follow [these instructions](https://docs.docker.com/install/).
 
-### Build the worker image
+# Build the worker image
 Now we need to build the docker image and push it to the kind clusters to test.
 ```
 cd model/
 docker build -t app-demo .
 ```
-### Setting Up Kind
+# Setting-up Kind
 To be able to run the *app-demo container* on a sample cluster, we use 
 [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
@@ -37,12 +35,11 @@ script.
 # Each of the created clusters has 3 worker nodes and one control plane by default.
 #
 
-
 cd community
 ./kind-setup-clusters.sh [number of clusters (default 2)] [config of each cluster (default kind-cluster-3-nodes.yaml)]
 ```
 
-### Pushing the image to a cluster
+# Pushing the image to a cluster
 Initially when you setup a cluster, the initial image is pushed to the clusters, but you might need to 
 push the image in all kind clusters. 
 
@@ -51,5 +48,5 @@ cd community
 ./push-image-to-clusters [number of clusters (default 2)]
 ```
 
-### Logging
-To be able to have logging, simply follow the instructions in [Logging](./Logging.md).
+# Logging
+To be able to have logging, simply follow the instructions in [Logging](https://github.com/EricssonResearch/cloud-native-app-simulator/wiki/Logging).
