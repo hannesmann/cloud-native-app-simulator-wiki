@@ -3,7 +3,7 @@
 HydraGen uses a standard taxonomy with hierarchical structure, which is the input to the Generator module. The input to this module must be given in JSON format following the taxonomy described here.
 
 
-## Taxonomy for overall application description
+## Overall Application Taxonomy
 
 ```json
 {
@@ -38,8 +38,22 @@ HydraGen uses a standard taxonomy with hierarchical structure, which is the inpu
   ...
 }
 ```
+## Describing Workload Placement and Scaling
 
-## Taxonomy for endpoint description
+```json
+"clusters": [
+    {
+      "cluster": "<string>",
+      "replicas": <integer>,
+      "namespace": "<string>",
+      "node": "<string>",
+      "annotations": [...]
+    },
+    ...
+]
+```
+
+## Endpoint Description
 
 ```json
 "endpoints": [
