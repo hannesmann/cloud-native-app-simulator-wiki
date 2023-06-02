@@ -40,6 +40,8 @@ HydraGen uses a standard taxonomy with hierarchical structure, which is the inpu
 ```
 ## Describing Workload Placement and Scaling
 
+The user can define the placement of each microservice on a specific node, cluster, or namespace. It is also possible to specify the number of microservice replicas once deployed.
+
 ```json
 "clusters": [
     {
