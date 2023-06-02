@@ -1,2 +1,2 @@
-Ericsson Research & Umeå University
+Ericsson Research & Umea University
 Apache License, Version 2.0
