@@ -1,21 +1,5 @@
-# HydraGen's Community
-
-Welcome to the Cloud-Native-App-Simulator community!
-
-This is the starting point for becoming a contributor - improving code, 
-improving docs, etc.
-
-- [Introduction](#introduction)
-- [Development Environment](#development-enviornment)
-
-## Introduction
-
-HydraGen is an open source microservice benchmark generator 
-that allows generating complete implementations of more generic architectural patterns
-for microservices.
-
-## Development Enviornment
-This document helps you get started developing code for Cloud-Native-App-Simulator.
+# Development Enviornment
+This document helps you get started developing code for HydraGen.
 If you follow this guide and find a problem, please take a few minutes to update this page.
 
 HydraGen's build system is designed to run with minimal dependencies:

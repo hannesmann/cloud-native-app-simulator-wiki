@@ -1,5 +1,5 @@
 # Dependecies
-1. kind
+1. docker
 2. istioctl
 3. kubectl
 4. go (for installation, configuration and basic testing, follow instructions in e.g. [How to Install GoLang (Go Programming Language) in Linux](https://www.tecmint.com/install-go-in-linux/); make sure go environment variables and path are configured accordingly)
@@ -21,11 +21,7 @@ kind load docker-image app-demo --name={cluster$i}
 # Environment Preparation
 
 ## Deploying a Development Environment
-Visit the [community page](community) to learn about development environment 
-setup.
-
-## Enabling Logging
-To be able to have logging, simply follow the instructions in [Logging](community/Logging.md).
+Visit this [Wiki Page](https://github.com/EricssonResearch/cloud-native-app-simulator/wiki/Development-Environment) to learn about development environment setup.
 
 ## Generating and Deploying the Application
 1. To generate and deploy microservice-based applications, go to the _/generator/_ directory
@@ -58,4 +54,4 @@ tsung stop
 ```
 
 ## Traffic Monitoring
-You can observe the performance metrics for both istio and chain by using the dashboards on the grafana web UI.
+You can observe the performance metrics for the application traffic by using the dashboards on the grafana web UI.
