@@ -1,6 +1,7 @@
 # Input File
 
-The input to the generation module must be given in JSON format keeping the taxonomy described next.
+HydraGen uses a standard taxonomy with hierarchical structure, which is the input to the Generator module. The input to this module must be given in JSON format following the taxonomy described here.
+
 
 ## Taxonomy for overall application description
 
