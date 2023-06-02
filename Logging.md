@@ -58,22 +58,22 @@ cd elk/
 ## Working with elastic search
 After executing the above steps successfully, now It is time to work with Kibana. Browse the address mentioned 
 previously. Click on Discover in the left-hand navigation menu:
-![Kibana Home Page](../images/elk/kibana-home-page.png)
+![Kibana Home Page](./elk/kibana-home-page.png)
 
 You should see the following configuration window:
-![Kibana Index pattern step 1 ](../images/elk/kibana-index-pattern-step-1.png)
+![Kibana Index pattern step 1 ](./elk/kibana-index-pattern-step-1.png)
 This allows you to define the Elasticsearch indices you’d like to explore in Kibana. Now, let's just use the `logstash-*` 
 wildcard pattern to capture all the log data. Enter `logstash-*` in the text box and click on Next step.
 
 You’ll then be brought to the following page:
-![Kibana Index pattern step 2 ](https://github.com/EricssonResearch/cloud-native-app-simulator/tree/main/images/elk/kibana-index-pattern-step-2.png)
+![Kibana Index pattern step 2 ](./elk/kibana-index-pattern-step-2.png)
 
 This allows you to configure which field Kibana will use to filter log data by time. In the dropdown, select the 
 `@timestamp` field, and hit Create index pattern.
 Now, hit Discover in the left hand navigation menu.
 
 You should see a histogram graph and some recent log entries:
-![Kibana Discover everything](https://github.com/EricssonResearch/cloud-native-app-simulator/tree/main/images/elk/kibana-discover-everything.png)
+![Kibana Discover everything](./elk/kibana-discover-everything.png)
 
 To be able to explore the latest logs for a given pod, we should deploy them and make sure that they are created and 
 running.
@@ -81,5 +81,5 @@ running.
 Let's assume that our pod name is `service1-75576df8cd-zjpg7`, then from the **Discover** page, in the search bar enter 
 `kubernetes.pod_name:service1`. This filters the log data for Pods named `service1`.
 You should then see a list of log entries for the `service1` Pod:
-![Kibana discover service1](https://github.com/EricssonResearch/cloud-native-app-simulator/tree/main/images/elk/kibana-discover-service1.png)
+![Kibana discover service1](./elk/kibana-discover-service1.png)
 
