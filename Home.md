@@ -24,7 +24,7 @@ In random mode, the tool automatically generates an application with random acyc
 The application emulator emulates the execution of all the microservices that are part of the application. It is implemented in Python and can run as either an HTTP server or a gRPC server. It also implements the supported resource stressors (i.e., CPU and network).
 
 ## Traffic Generator
-The traffic generation tool allows generation of traffic load from an external client with customizable traffic patterns using different communication protocols. Our tool can be used with any traffic load generator tool such as _HTTPmon_ or _Tsung_. The traffic can be customized based on parameters such as the number of concurrent requests, think-time, and duration.
+The traffic generation tool allows generation of traffic load from an external client with customizable traffic patterns using different communication protocols. Our tool can be used with any traffic load generator tool such as [HTTPmon](https://github.com/cloud-control/httpmon) or [Tsung](http://tsung.erlang-projects.org). The traffic can be customized based on parameters such as the number of concurrent requests, think-time, and duration.
 
 ## Performance Monitoring
 This module is used to monitor traffic performance and resource usage metrics. It is based on a metric collection, storage, and visualization pipeline that relies on Kubernetes, Istio, Prometheus, Grafana and Kiali. It also includes tools for statistical analysis of experimental results.
