@@ -30,16 +30,3 @@ The traffic generation tool allows generation of traffic load from an external c
 This module is used to monitor traffic performance and resource usage metrics. It is based on a metric collection, storage, and visualization pipeline that relies on Kubernetes, Istio, Prometheus, Grafana and Kiali. It also includes tools for statistical analysis of experimental results.
 
 Prometheus stack is used to collect resource utilization metrics. Furthermore, we use the monitoring capabilities of Istio sidecar proxies together with Prometheus to collect traffic performance metrics.
-
-### Useful Commands
-
-```bash
-kubectl create configmap grafana-config \
-    --from-file=grafana-dashboard-provider.yaml=grafana-dashboard-provider.yaml
-```
-
-```bash
-kubectl create secret generic grafana-creds \
-  --from-literal=GF_SECURITY_ADMIN_USER=admin \
-  --from-literal=GF_SECURITY_ADMIN_PASSWORD=graphsRcool
-```
