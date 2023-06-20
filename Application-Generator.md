@@ -4,7 +4,7 @@ HydraGen uses a standard taxonomy with hierarchical structure, which is the inpu
 
 ## Overall Application Taxonomy
 
-A service name, clusters and endpoints are required. Other sections are optional and will be set to their default values if omitted.
+At least one cluster and endpoint is required. Other sections are optional and will be set to their default values if omitted.
 
 ```json
 {
