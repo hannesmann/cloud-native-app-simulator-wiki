@@ -28,7 +28,7 @@ Visit this [Wiki Page](https://github.com/EricssonResearch/cloud-native-app-simu
 2. Make sure the _/generator_ directory is located under path _~/go_projects/src/_ and initialize module by executing `go mod init`
 3. If needed, install go module dependencies, e.g. cobra and yaml
 4. Modify any of the input files under the _input/_ directory according to your own requirements (see some json examples under the _examples/_ directory).
-5. Generate and deploy kubernetes manifest files by running the _generator.sh_ script. This command can be run under two different modes: 
+5. Generate and deploy kubernetes manifest files by running the _generator.sh_ and _deploy.sh_ scripts. The generator can be run under two different modes: 
   - **Random mode:** Generates a random description file
   - **Preset mode:** Generates Kubernetes manifest based on a description file in the input directory. Note that this commands generates k8s yaml files which are stored under the _clusterX_ directory(ies) (see some .yaml examples under the _examples/_ directory).
 ```bash
