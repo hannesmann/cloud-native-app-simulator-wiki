@@ -16,7 +16,7 @@ To use docker to build required images you will need:
 - **docker tools:** To download and install Docker follow [these instructions](https://docs.docker.com/install/).
 
 # Build the worker image
-Now we need to build the docker image and push it to the kind clusters to test.
+Now we need to build the docker image and push it to the kind clusters.
 ```
 cd model/
 docker build -t app-demo .
@@ -46,6 +46,18 @@ push the image in all kind clusters.
 ```
 cd community
 ./push-image-to-clusters [number of clusters (default 2)]
+```
+
+# Deploying the image
+By default, HydraGen will deploy a release image from GitHub Packages on every worker. To deploy the development image instead set this option in the input JSON configuration:
+```json
+{
+    ...
+    "settings": {
+        "development": true
+    },
+    ...
+}
 ```
 
 # Logging
